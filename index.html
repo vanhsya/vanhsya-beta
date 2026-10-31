@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VANHSYA: Neural Radio Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #050008;
+        font-family: "Courier Prime", monospace;
+        color: #5a47e7;
+      }
+      .scanline {
+        width: 100%;
+        height: 100px;
+        z-index: 100;
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(255, 255, 255, 0.03) 50%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        opacity: 0.1;
+        position: absolute;
+        bottom: 100%;
+        pointer-events: none;
+        animation: scanline 6s linear infinite;
+      }
+      @keyframes scanline {
+        0% {
+          bottom: 100%;
+        }
+        100% {
+          bottom: -100px;
+        }
+      }
+      .crt-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background:
+          linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%),
+          linear-gradient(
+            90deg,
+            rgba(255, 0, 0, 0.02),
+            rgba(0, 255, 0, 0.01),
+            rgba(0, 0, 255, 0.02)
+          );
+        z-index: 150;
+        background-size:
+          100% 2px,
+          3px 100%;
+        pointer-events: none;
+      }
+    </style>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <div class="crt-overlay"></div>
+    <div class="scanline"></div>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "name": "Copy of VANHSYA: The Brother Robots",
+  "description": "An interactive 3D robotic interface featuring Echo and Vigil, powered by Gemini Live API for real-time voice interaction.",
+  "requestFramePermissions": ["microphone"]
+}

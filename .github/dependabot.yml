@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "automated"
+    ignore:
+      - dependency-name: "vite"
+        update-types: ["version-major"]
+      - dependency-name: "react"
+        update-types: ["version-major"]
+      - dependency-name: "three"
+        update-types: ["version-major"]
